@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body onload="myfunction()">
+    <div id="mario-chat">
+        <div id="chat-window">
+            <div id="output">
+                
+            </div>
+        </div>
+        <input type="text" id="handle" placeholder="Your Name">
+            <input type="text" id="message" placeholder="Message" >
+            <h5 id="1" style="display: none;">Zach is Typing</h5>
+             <div id="2" style="display: none;" class='loader'> </div>
+                <button id="send" type="submit" onclick="">Send</button>
+                
+                
+                
+        </div>
+
+
+   
+<script>
+
+    let n = document.getElementById('handle')
+    
+    let output = document.getElementById('output')
+    let button = document.getElementById('send')
+    let state = "none"
+    let h1 = document.getElementById("1")
+    let div = document.getElementById("2")
+    let score = 0;
+    button.addEventListener('click', ()=>{  
+      let message = document.getElementById('message')
+        h1.style.display = "block"
+    div.style.display = "block"
+    message = message.value;
+    message = message.toLowerCase()
+  setTimeout(function(){
+   
+    if(state=="none"){
+
+  h1.style.display = "none"
+    div.style.display = "none"
+    state = "q2"
+    output.innerHTML += '<p> <strong>'+"Zach"+': </strong> '+"Money, Donation, Saving, Nothing"+'</p>'
+    if (message=="fire"){
+      score+=50
+      console.log(score)
+    }
+    else if(message=="water"){
+      score+=40
+    }
+    else if(score=="earth"){
+      score+=30
+    }
+    else if (score=="air"){
+      score+=20
+    }
+}
+else if(state=="q2"){
+
+  h1.style.display = "none"
+    div.style.display = "none"
+    state = "q3"
+    output.innerHTML += '<p> <strong>'+"Zach"+': </strong> '+"Red, Blue, Green, White "+'</p>'
+    if (message=="money"){
+      score+=50
+    }
+    else if(message=="donation"){
+      score+=40
+    }
+    else if(score=="saving"){
+      score+=30
+    }
+    else if (score=="nothing"){
+      score+=20
+    }
+  }
+  else if(state=="q3"){
+
+  h1.style.display = "none"
+    div.style.display = "none"
+    state = "q4"
+    output.innerHTML += '<p> <strong>'+"Zach"+': </strong> '+"Are you - Confident or Patient or Emphathetic or Analytical"+'</p>'
+    if (message=="red"){
+      score+=50
+    }
+    else if(message=="blue"){
+      score+=40
+    }
+    else if(score=="green"){
+      score+=30
+    }
+    else if (score=="white"){
+      score+=20
+    }
+    
+}
+else if(state=="q4")
+{
+
+h1.style.display = "none"
+  div.style.display = "none"
+  state = "none"
+  if (message=="confident"){
+    score+=50
+  }
+  else if(message=="emphathetic"){
+    score+=40
+  }
+  else if(score=="patient"){
+    score+=30
+  }
+  else if (score=="analytical"){
+    score+=20
+  }
+ if (score>=150) {
+  output.innerHTML += '<p> <strong>'+"Zach"+': </strong> '+"Your element is fire! You are a confident person, you like red colour, you might be short-tempered too! You are enthusiaistic and you like to take control. You like excitement, exploring and action!"+'</p>'
+ }
+else if (score>=100 && score<=150){
+  output.innerHTML += '<p> <strong>'+"Zach"+': </strong> '+"Your element is water! You are an intuitive person, you like blue colour, you might be emphaethetic too! You have deep-emotions and you are very private!"+'</p>'
+}
+else if (score>=75 && score<=100){
+  output.innerHTML += '<p> <strong>'+"Zach"+': </strong> '+"Your element is earth! You are an physical, stable person, you like green colour, you might be patient too! You take one step at a time and you are goal oriented!"+'</p>'
+}
+else {
+  output.innerHTML += '<p> <strong>'+"Zach"+': </strong> '+"Your element is air! You are an social, phylisophic person, you like white colour, you might be analytical too! You share your thoughts to the world and you are intellectually stimulating!"+'</p>'
+}
+}
+
+}
+  
+  ,5000)
+ 
+  output.innerHTML += '<p> <strong>'+n.value+': </strong> '+message+'</p>'
+
+ 
+       
+    })
+    function myfunction(){
+        output.innerHTML += '<p> <strong>'+"Zach"+': </strong> '+"Hi there! I am Zach the AI Chatbot"+'</p>'
+        output.innerHTML += '<p> <strong>'+"Zach"+': </strong> '+"I am also a fortune teller!"+'</p>'
+        output.innerHTML += '<p> <strong>'+"Zach"+': </strong> '+"Answer myquestions and i will tell you true self! "+'</p>'
+        output.innerHTML += '<p> <strong>'+"Zach"+': </strong> '+"Your destiny lies in your own hands"+'</p>'
+        output.innerHTML += '<p> <strong>'+"Zach"+': </strong> '+"Fire, Water Air Or Earth"+'</p>'
+        
+    }
+        
+       
+    
+</script>
+</body>
+<style>
+ 
+</style>
+</html>
+
+
